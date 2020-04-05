@@ -1,6 +1,17 @@
 
+var url = window.location.href;
+
+var locationGit="";
+
+
 if(navigator.serviceWorker){
-    navigator.serviceWorker.register('sw.js');
+    if(url.includes('localhost')){
+    locationGit='sw.js';    
+    }else{
+    locationGit = "/Tuitor2020/sw.js";    
+    }
+    
+    navigator.serviceWorker.register(locationGit);
 }
 
 // Referencias de jQuery
